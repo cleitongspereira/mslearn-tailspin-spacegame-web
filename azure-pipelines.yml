@@ -1,5 +1,5 @@
-pool: 
-  vmImage: windows-latest
+pool:
+  name: 'vRED-SE01'
 
 variables:
   buildConfiguration: 'Release'
