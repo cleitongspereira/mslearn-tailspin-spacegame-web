@@ -2,7 +2,7 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'Optimus-prime'
+  name: 'Optimus-prime'
 
 steps:
 - task: UseDotNet@2
