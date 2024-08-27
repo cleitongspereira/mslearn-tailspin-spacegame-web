@@ -8,8 +8,16 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-  - script: dotnet build --configuration $(buildConfiguration)  
-    displayName: 'dotnet build $(buildConfiguration)' 
+- task: UseDotNet@2
+  displayName: 'Use .NET SDK 6.x'
+  inputs:
+    version: '6.x'
+- script: dotnet build --configuration $(buildConfiguration)  
+  displayName: 'dotnet build $(buildConfiguration)' 
 
-  - bash: echo hello world
+- task: Npm@1
+  displayName: 'Run npm install'
+  inputs:
+    verbose: false
 
+- bash: echo hello world
